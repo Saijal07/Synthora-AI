@@ -16,7 +16,6 @@ public class UserProfileResponse {
     private Integer totalCredits;
     private Integer freeCredits;
     private Integer usedCredits;
-    private Integer remainingCredits;
     private Boolean isPro;
     private Boolean isVerified;
     private LocalDateTime createdAt;
@@ -30,7 +29,6 @@ public class UserProfileResponse {
                 .totalCredits(user.getTotalCredits())
                 .freeCredits(user.getFreeCredits())
                 .usedCredits(user.getUsedCredits())
-                .remainingCredits(user.getRemainingCredits())
                 .isPro(user.getIsPro())
                 .isVerified(user.getIsVerified())
                 .createdAt(user.getCreatedAt())

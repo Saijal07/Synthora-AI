@@ -75,6 +75,7 @@ export default function Login() {
               <input
                 type="password"
                 required
+                autoComplete="current-password"
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-purple-500 transition"
                 placeholder="••••••••"
                 value={form.password}
