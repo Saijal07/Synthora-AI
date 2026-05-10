@@ -1,12 +1,11 @@
 import { useAuth } from "../context/AuthContext";
 import DashboardLayout from "../components/DashboardLayout";
-import { FREE_CREDIT_LIMIT } from "../constants/credits";
 
 export default function Billing() {
   const { user } = useAuth();
   const isPro = user?.isPro;
-  const totalCredits = user?.totalCredits ?? FREE_CREDIT_LIMIT;
-  const remainingCredits = user?.remainingCredits ?? totalCredits;
+  const totalCredits = user?.totalCredits ?? 50;
+  const remainingCredits = user?.freeCredits ?? totalCredits;
 
   return (
     <DashboardLayout>
@@ -47,9 +46,8 @@ export default function Billing() {
             <p className="text-2xl font-bold text-white mb-5">$0</p>
             <ul className="space-y-2 mb-6">
               {[
-                `${FREE_CREDIT_LIMIT} monthly AI credits`,
+                `${totalCredits} AI credits included`,
                 "Access all AI generators",
-                "Credits reset every 30 days",
                 "History",
                 "Copy output",
               ].map((f) => (
