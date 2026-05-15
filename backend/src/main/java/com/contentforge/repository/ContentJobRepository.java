@@ -19,3 +19,5 @@ public interface ContentJobRepository extends JpaRepository<ContentJob, Long> {
 
     Optional<ContentJob> findByIdAndUser(Long id, User user);
 }
+
+

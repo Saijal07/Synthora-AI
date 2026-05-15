@@ -20,9 +20,13 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
-  const login = (token, userData) => {
+  const login = async (token, userData) => {
     localStorage.setItem("token", token);
     setUser(userData);
+    try {
+      const res = await api.get("/user/me");
+      setUser(res.data);
+    } catch {}
   };
 
   const logout = () => {

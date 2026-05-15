@@ -2,6 +2,7 @@ package com.contentforge.controller;
 
 import com.contentforge.dto.*;
 import com.contentforge.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -20,6 +21,22 @@ public class UserController {
             @AuthenticationPrincipal UserDetails userDetails) {
         UserProfileResponse data = userService.getProfile(userDetails.getUsername());
         return ResponseEntity.ok(ApiResponse.success("Profile fetched", data));
+    }
+
+    @PutMapping("/profile")
+    public ResponseEntity<ApiResponse<UserProfileResponse>> updateProfile(
+            @AuthenticationPrincipal UserDetails userDetails,
+            @Valid @RequestBody UpdateProfileRequest request) {
+        UserProfileResponse data = userService.updateProfile(userDetails.getUsername(), request);
+        return ResponseEntity.ok(ApiResponse.success("Profile updated", data));
+    }
+
+    @PostMapping("/change-password")
+    public ResponseEntity<ApiResponse<Void>> changePassword(
+            @AuthenticationPrincipal UserDetails userDetails,
+            @Valid @RequestBody ChangePasswordRequest request) {
+        userService.changePassword(userDetails.getUsername(), request);
+        return ResponseEntity.ok(ApiResponse.success("Password changed successfully", null));
     }
 
     @PostMapping("/upgrade")
