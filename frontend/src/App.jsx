@@ -11,6 +11,7 @@ import Generate from "./pages/Generate";
 import History from "./pages/History";
 import Settings from "./pages/Settings";
 import Billing from "./pages/Billing";
+import Demo from "./pages/Demo";
 
 export default function App() {
   return (
@@ -62,6 +63,7 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/demo" element={<Demo />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>

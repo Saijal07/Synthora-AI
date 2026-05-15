@@ -91,7 +91,7 @@ export default function Landing() {
             ✨ Start Creating
           </Link>
           <Link
-            to="/login"
+            to="/demo"
             className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-8 py-3.5 rounded-xl transition text-base flex items-center justify-center gap-2"
           >
             ▶ Try Demo
