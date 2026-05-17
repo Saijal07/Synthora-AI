@@ -13,10 +13,12 @@ export default function DashboardLayout({ children }) {
   return (
     <div className="flex min-h-screen bg-[#0d0d14] text-white">
       <Sidebar />
-      <main className="flex-1 ml-64 flex flex-col min-h-screen">
+
+      {/* Main content — offset on desktop for sidebar, top padding on mobile for top bar */}
+      <main className="flex-1 md:ml-64 flex flex-col min-h-screen">
         {/* Top Bar */}
-        <div className="flex items-center justify-between px-8 py-4 border-b border-white/5 sticky top-0 bg-[#0d0d14] z-10">
-          {/* Left — Credits badge */}
+        <div className="flex items-center justify-between px-4 md:px-8 py-3 md:py-4 border-b border-white/5 sticky top-0 bg-[#0d0d14] z-10 mt-12 md:mt-0">
+          {/* Credits badge */}
           <div className="flex items-center gap-3 text-sm">
             {isPro ? (
               <span className="text-yellow-400 text-xs bg-yellow-500/10 border border-yellow-500/20 px-3 py-1 rounded-full font-medium">
@@ -29,14 +31,15 @@ export default function DashboardLayout({ children }) {
             )}
           </div>
 
-          {/* Right — Upgrade + Profile */}
-          <div className="flex items-center gap-3">
+          {/* Upgrade + Profile */}
+          <div className="flex items-center gap-2 md:gap-3">
             {!isPro && (
               <button
                 onClick={() => navigate("/billing")}
-                className="flex items-center gap-1.5 bg-purple-600 hover:bg-purple-700 text-white px-4 py-1.5 rounded-lg text-xs font-semibold transition"
+                className="flex items-center gap-1.5 bg-purple-600 hover:bg-purple-700 text-white px-3 md:px-4 py-1.5 rounded-lg text-xs font-semibold transition"
               >
-                ⬆ Upgrade to Pro
+                ⬆ <span className="hidden sm:inline">Upgrade to Pro</span>
+                <span className="sm:hidden">Pro</span>
               </button>
             )}
             <ProfileDropdown />
@@ -44,7 +47,7 @@ export default function DashboardLayout({ children }) {
         </div>
 
         {/* Page Content */}
-        <div className="flex-1 p-8">{children}</div>
+        <div className="flex-1 p-4 md:p-8">{children}</div>
       </main>
     </div>
   );
