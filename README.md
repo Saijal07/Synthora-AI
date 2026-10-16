@@ -1,6 +1,6 @@
 # 🚀 Synthora AI
 
-Synthora AI is an AI-powered content generation platform that helps users create blogs, YouTube descriptions, viral titles, and other AI-generated content through a simple and intuitive interface.
+Synthora AI is an AI-integrated content generation platform that helps users create blogs, YouTube descriptions, viral titles, and other AI-generated content through a simple and intuitive interface.
 
 ## 🌐 Live Demo
 
