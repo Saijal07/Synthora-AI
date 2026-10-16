@@ -17,10 +17,10 @@ Synthora AI is an AI-powered content generation platform that helps users create
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** React, JavaScript, HTML, CSS
-* **Backend:** Spring Boot, Spring Security, JWT
-* **Database:** PostgreSQL
-* **Deployment:** Vercel, Render
+* **Frontend:** JavaScript, HTML, CSS
+* **Backend:** Spring Boot
+* **Database:** MySQL
+* **Deployment:** Vercel, Render, NeonDB
 
 ## 🚀 Run Locally
 
